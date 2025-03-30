@@ -1,0 +1,21 @@
+# Node modules (avoid uploading them)
+node_modules/
+project/node_modules/
+backend/node_modules/
+
+# Environment variables
+.env
+project/.env
+backend/.env
+
+# Build files
+dist/
+build/
+project/dist/
+project/build/
+backend/dist/
+backend/build/
+
+# IDE-specific files
+.vscode/
+.DS_Store
