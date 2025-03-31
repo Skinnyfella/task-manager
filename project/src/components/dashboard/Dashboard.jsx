@@ -15,7 +15,7 @@ function Dashboard() {
     if (!currentUser) return;
     try {
       const token = await currentUser.getIdToken();
-      const res = await axios.get('http://localhost:5000/api/tasks', {
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/tasks`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);
