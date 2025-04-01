@@ -14,8 +14,3 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
-
-// Expose auth on window for debugging (remove before production)
-if (typeof window !== 'undefined') {
-  window.auth = auth;
-}

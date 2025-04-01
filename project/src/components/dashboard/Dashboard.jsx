@@ -15,7 +15,7 @@ function Dashboard() {
     if (!currentUser) return;
     try {
       const token = await currentUser.getIdToken();
-      const res = await axios.get(`${import.meta.env.VITE_API_BACKEND_URL}/api/tasks`, {
+      const res = await axios.get(`https://task-manager-p9ka.onrender.com/api/tasks`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);

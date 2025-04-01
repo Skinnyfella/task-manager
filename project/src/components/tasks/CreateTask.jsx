@@ -19,7 +19,7 @@ function CreateTask() {
     try {
       const token = await currentUser.getIdToken();
       await axios.post(
-        `${import.meta.env.VITE_API_BACKEND_URL}/api/tasks`,
+        `https://task-manager-p9ka.onrender.com/api/tasks`,
         {
           title: task.title,
           description: task.description,

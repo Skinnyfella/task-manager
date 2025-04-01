@@ -37,7 +37,7 @@ function Profile() {
       if (!currentUser) return;
       try {
         const token = await currentUser.getIdToken();
-        const statsRes = await axios.get(`${import.meta.env.VITE_API_BACKEND_URL}/api/user/stats`, {
+        const statsRes = await axios.get(`https://task-manager-p9ka.onrender.com/api/user/stats`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStats(statsRes.data);
