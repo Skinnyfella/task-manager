@@ -1,4 +1,4 @@
-// /src/server.js
+// /src/index.js
 import dotenv from 'dotenv';
 dotenv.config();
 import app from './app.js';
