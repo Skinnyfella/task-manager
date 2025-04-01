@@ -19,7 +19,7 @@ function TaskList({ onTasksUpdated }) {
     try {
       if (!currentUser) return;
       const token = await currentUser.getIdToken();
-      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/tasks`, {
+      const res = await axios.get(`${import.meta.env.VITE_API_BACKEND_URL}/api/tasks`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);
@@ -37,7 +37,7 @@ function TaskList({ onTasksUpdated }) {
   const handleDelete = async (taskId) => {
     try {
       const token = await currentUser.getIdToken();
-      await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/tasks/${taskId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_BACKEND_URL}/api/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
@@ -75,7 +75,7 @@ function TaskList({ onTasksUpdated }) {
       const newStatus = task.status === 'completed' ? 'in_progress' : 'completed';
 
       const res = await axios.put(
-        `${import.meta.env.VITE_API_BASE_URL}/api/tasks/${task.id}`,
+        `${import.meta.env.VITE_API_BACKEND_URL}/api/tasks/${task.id}`,
         {
           title: task.title,
           description: task.description,
@@ -99,7 +99,7 @@ function TaskList({ onTasksUpdated }) {
     try {
       const token = await currentUser.getIdToken();
       const res = await axios.put(
-        `${import.meta.env.VITE_API_BASE_URL}/api/tasks/${taskId}`,
+        `${import.meta.env.VITE_API_BACKEND_URL}/api/tasks/${taskId}`,
       
         editFormData,
         {

@@ -57,7 +57,7 @@ const Register = () => {
       const lastName = rest.join(' ');
 
       await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/auth/sync`,
+        `${import.meta.env.VITE_API_BACKEND_URL}/api/auth/sync`,
         { firstName, lastName },
         {
           headers: { Authorization: `Bearer ${token}` },
